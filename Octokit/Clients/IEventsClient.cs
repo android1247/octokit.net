@@ -22,6 +22,16 @@ namespace Octokit
         Task<IReadOnlyList<Activity>> GetAll();
 
         /// <summary>
+        /// Gets all the public events
+        /// </summary>
+        /// <remarks>
+        /// http://developer.github.com/v3/activity/events/#list-public-events
+        /// </remarks>
+        /// <returns>All the public <see cref="Activity"/>s for the particular user.</returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
+        Task<IReadOnlyList<Activity>> GetAll(ApiOptions options);
+
+        /// <summary>
         /// Gets all the events for a given repository
         /// </summary>
         /// <remarks>
@@ -31,6 +41,18 @@ namespace Octokit
         /// <param name="name">The name of the repository</param>
         /// <returns>All the <see cref="Activity"/>s for the particular repository.</returns>
         Task<IReadOnlyList<Activity>> GetAllForRepository(string owner, string name);
+
+        /// <summary>
+        /// Gets all the events for a given repository
+        /// </summary>
+        /// <remarks>
+        /// http://developer.github.com/v3/activity/events/#list-issue-events-for-a-repository
+        /// </remarks>
+        /// <param name="owner">The owner of the repository</param>
+        /// <param name="name">The name of the repository</param>
+        /// <param name="options">TODO: ha ha business</param>
+        /// <returns>All the <see cref="Activity"/>s for the particular repository.</returns>
+        Task<IReadOnlyList<Activity>> GetAllForRepository(string owner, string name, ApiOptions options);
 
         /// <summary>
         /// Gets all the events for a given repository network
@@ -44,6 +66,18 @@ namespace Octokit
         Task<IReadOnlyList<Activity>> GetAllForRepositoryNetwork(string owner, string name);
 
         /// <summary>
+        /// Gets all the events for a given repository network
+        /// </summary>
+        /// <remarks>
+        /// http://developer.github.com/v3/activity/events/#list-public-events-for-a-network-of-repositories
+        /// </remarks>
+        /// <param name="owner">The owner of the repository</param>
+        /// <param name="name">The name of the repository</param>
+        /// <param name="options">TODO: ha ha business</param>
+        /// <returns>All the <see cref="Activity"/>s for the particular repository network.</returns>
+        Task<IReadOnlyList<Activity>> GetAllForRepositoryNetwork(string owner, string name, ApiOptions options);
+
+        /// <summary>
         /// Gets all the events for a given organization
         /// </summary>
         /// <remarks>
@@ -54,6 +88,17 @@ namespace Octokit
         Task<IReadOnlyList<Activity>> GetAllForOrganization(string organization);
 
         /// <summary>
+        /// Gets all the events for a given organization
+        /// </summary>
+        /// <remarks>
+        /// http://developer.github.com/v3/activity/events/#list-public-events-for-an-organization
+        /// </remarks>
+        /// <param name="organization">The name of the organization</param>
+        /// <param name="options">TODO: ha ha business</param>
+        /// <returns>All the <see cref="Activity"/>s for the particular organization.</returns>
+        Task<IReadOnlyList<Activity>> GetAllForOrganization(string organization, ApiOptions options);
+
+        /// <summary>
         /// Gets all the events that have been received by a given user.
         /// </summary>
         /// <remarks>
@@ -62,6 +107,7 @@ namespace Octokit
         /// <param name="user">The login of the user</param>
         /// <returns>All the <see cref="Activity"/>s that a particular user has received.</returns>
         Task<IReadOnlyList<Activity>> GetUserReceived(string user);
+        // TODO: this isn't following our naming conventions
 
         /// <summary>
         /// Gets all the events that have been received by a given user.
@@ -72,6 +118,7 @@ namespace Octokit
         /// <param name="user">The login of the user</param>
         /// <returns>All the <see cref="Activity"/>s that a particular user has received.</returns>
         Task<IReadOnlyList<Activity>> GetUserReceivedPublic(string user);
+        // TODO: this isn't following our naming conventions
 
         /// <summary>
         /// Gets all the events that have been performed by a given user.
@@ -82,6 +129,7 @@ namespace Octokit
         /// <param name="user">The login of the user</param>
         /// <returns>All the <see cref="Activity"/>s that a particular user has performed.</returns>
         Task<IReadOnlyList<Activity>> GetUserPerformed(string user);
+        // TODO: this isn't following our naming conventions
 
         /// <summary>
         /// Gets all the public events that have been performed by a given user.
@@ -92,6 +140,7 @@ namespace Octokit
         /// <param name="user">The login of the user</param>
         /// <returns>All the public <see cref="Activity"/>s that a particular user has performed.</returns>
         Task<IReadOnlyList<Activity>> GetUserPerformedPublic(string user);
+        // TODO: this isn't following our naming conventions
 
         /// <summary>
         /// Gets all the events that are associated with an organization.
@@ -103,5 +152,6 @@ namespace Octokit
         /// <param name="organization">The name of the organization</param>
         /// <returns>All the public <see cref="Activity"/>s that are associated with an organization.</returns>
         Task<IReadOnlyList<Activity>> GetForAnOrganization(string user, string organization);
+        // TODO: this isn't following our naming conventions
     }
 }
