@@ -107,7 +107,6 @@ namespace Octokit
         /// <param name="user">The login of the user</param>
         /// <returns>All the <see cref="Activity"/>s that a particular user has received.</returns>
         Task<IReadOnlyList<Activity>> GetUserReceived(string user);
-        // TODO: this isn't following our naming conventions
 
         /// <summary>
         /// Gets all the events that have been received by a given user.
@@ -118,7 +117,6 @@ namespace Octokit
         /// <param name="user">The login of the user</param>
         /// <returns>All the <see cref="Activity"/>s that a particular user has received.</returns>
         Task<IReadOnlyList<Activity>> GetUserReceivedPublic(string user);
-        // TODO: this isn't following our naming conventions
 
         /// <summary>
         /// Gets all the events that have been performed by a given user.
@@ -129,7 +127,6 @@ namespace Octokit
         /// <param name="user">The login of the user</param>
         /// <returns>All the <see cref="Activity"/>s that a particular user has performed.</returns>
         Task<IReadOnlyList<Activity>> GetUserPerformed(string user);
-        // TODO: this isn't following our naming conventions
 
         /// <summary>
         /// Gets all the public events that have been performed by a given user.
@@ -140,7 +137,6 @@ namespace Octokit
         /// <param name="user">The login of the user</param>
         /// <returns>All the public <see cref="Activity"/>s that a particular user has performed.</returns>
         Task<IReadOnlyList<Activity>> GetUserPerformedPublic(string user);
-        // TODO: this isn't following our naming conventions
 
         /// <summary>
         /// Gets all the events that are associated with an organization.
@@ -152,6 +148,5 @@ namespace Octokit
         /// <param name="organization">The name of the organization</param>
         /// <returns>All the public <see cref="Activity"/>s that are associated with an organization.</returns>
         Task<IReadOnlyList<Activity>> GetForAnOrganization(string user, string organization);
-        // TODO: this isn't following our naming conventions
     }
 }
