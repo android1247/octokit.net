@@ -195,8 +195,7 @@ namespace Octokit
         /// <param name="name">The name of the repository</param>
         /// <returns></returns>
         Task<IReadOnlyList<Issue>> GetForRepository(string owner, string name);
-        // TODO: does not match naming conventions
-
+ 
         /// <summary>
         /// Gets issues for a repository.
         /// </summary>
@@ -208,8 +207,7 @@ namespace Octokit
         /// <param name="request">Used to filter and sort the list of issues returned</param>
         /// <returns></returns>
         Task<IReadOnlyList<Issue>> GetForRepository(string owner, string name, RepositoryIssueRequest request);
-        // TODO: does not match naming conventions
-
+ 
         /// <summary>
         /// Creates an issue for the specified repository. Any user with pull access to a repository can create an
         /// issue.
